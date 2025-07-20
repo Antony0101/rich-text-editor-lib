@@ -40,8 +40,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/rich-text-editor-lib.git"
+    "url": "https://github.com/adarshnub/rich-text-editor-lib.git"
   },
+  "bugs": {
+    "url": "https://github.com/adarshnub/rich-text-editor-lib/issues"
+  },
+  "homepage": "https://github.com/adarshnub/rich-text-editor-lib#readme",
   "keywords": [
     "react",
     "rich-text",
