@@ -1,0 +1,168 @@
+/* RichTextEditor main container */
+.rte-root {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+.rte-editor-container {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  border: 1.5px solid #333;
+  background: #181818;
+  box-sizing: border-box;
+  position: relative;
+}
+.rte-toolbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  overflow-x: auto;
+  min-height: 44px;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+.rte-toolbar-btn {
+  color: #e5e5e5;
+  background: transparent;
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  min-height: 36px;
+  font-size: 1rem;
+}
+.rte-toolbar-btn:hover,
+.rte-toolbar-btn:focus {
+  background: #23272f;
+  color: #00f0ff;
+}
+.rte-toolbar-btn.rte-active {
+  background: #00f0ff22;
+  color: #00f0ff;
+  box-shadow: 0 2px 8px 0 #00f0ff22;
+}
+.rte-toolbar-btn:active {
+  background: #00bfff33;
+}
+.rte-link-popup {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 50;
+  background: #181818;
+  border: 1px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 24px 0 #0008;
+  padding: 4px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+@media (min-width: 640px) {
+  .rte-link-popup {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.rte-link-popup input {
+  background: #222;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 15px;
+  border: 1px solid #444;
+  outline: none;
+  min-width: 0;
+  flex: 1 1 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  transition: border 0.2s;
+}
+.rte-link-popup input:focus {
+  border: 1px solid #00f0ff;
+}
+.rte-insert-btn {
+  color: #00f0ff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s;
+  font-weight: 500;
+}
+.rte-insert-btn:hover {
+  background: #222;
+}
+.rte-cancel-btn {
+  color: #e5e5e5;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s;
+  font-weight: 500;
+}
+.rte-cancel-btn:hover {
+  background: #222;
+}
+.rte-editor-box {
+  min-height: 140px;
+  max-height: 320px;
+  width: 100%;
+  color: #e5e5e5;
+  background: #191b20;
+  border-radius: 10px;
+  border: none;
+  padding: 1.2rem 1.1rem;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+  box-sizing: border-box;
+  margin: 0 0 0.5rem 0;
+  white-space: pre-wrap;
+  overflow-y: auto;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-align: left;
+}
+.rte-editor-box:focus {
+  border: 1.5px solid #00f0ff;
+  background: #1a1d23;
+  box-shadow: 0 0 0 2px #00f0ff33;
+}
+.rte-editor-box[aria-invalid="true"] {
+  border: 1.5px solid #ff4d4f;
+}
+.rte-placeholder {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  color: #888;
+  pointer-events: none;
+  font-size: 15px;
+  opacity: 0.85;
+  z-index: 1;
+}
+.rte-error {
+  color: #ff4d4f;
+  font-size: 12px;
+  margin-top: 4px;
+} 

@@ -1,0 +1,54 @@
+{
+  "name": "rich-text-editor-lib",
+  "version": "0.0.1",
+  "description": "A reusable rich text editor React component.",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsup src/index.ts --dts --format esm,cjs --out-dir dist",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0",
+    "lucide-react": ">=0.300.0"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "tsup": "^8.0.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.35.1",
+    "vite": "^7.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/rich-text-editor-lib.git"
+  },
+  "keywords": [
+    "react",
+    "rich-text",
+    "editor",
+    "component",
+    "wysiwyg"
+  ],
+  "author": "Adarsh Viswam",
+  "license": "MIT"
+}
