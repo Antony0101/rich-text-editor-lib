@@ -2,13 +2,23 @@
 
 A modern, customizable rich text editor React component with toolbar, link support, and list formatting. Built with TypeScript and Lucide icons.
 
+## Live Playground
+
+Try the rich text editor live at: [https://rich-text-editor-lib.vercel.app/](https://rich-text-editor-lib.vercel.app/)
+
 ## Features
-- Bold, italic, underline, strikethrough
-- Bullet and numbered lists
-- Insert/edit links
-- Customizable placeholder
-- Accessible and keyboard-friendly
-- Styled for dark backgrounds (customize as needed)
+The rich text editor includes:
+
+- **Bold, Italic, Underline, Strikethrough** formatting
+- **Bullet lists** and **Numbered lists**
+- **Insert/Edit links** with popup
+- **Customizable placeholder**
+- **Reset editor button**
+- **Accessible and keyboard-friendly**
+- **Dark mode styling** (customizable)
+- **Error message display**
+- **Custom className and style support**
+- **Lucide icons toolbar**
 
 ## Installation
 
@@ -22,8 +32,8 @@ npm install rich-text-editor-lib lucide-react
 
 ```tsx
 import React, { useState } from 'react';
-import RichTextEditor from 'rich-text-editor-lib';
-import 'rich-text-editor-lib/dist/rich-text-editor.css';
+import { RichTextEditor } from "rich-text-editor-lib";
+import "rich-text-editor-lib/dist/index.css";
 
 function MyForm() {
   const [value, setValue] = useState('');
