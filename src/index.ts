@@ -1,2 +1,2 @@
-export { default as RichTextEditor } from "./RichTextEditor";
-export type { default as RichTextEditorType } from "./RichTextEditor";
+import RichTextEditor from "./RichTextEditor";
+export default RichTextEditor;

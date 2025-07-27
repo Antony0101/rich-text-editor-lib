@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsup src/index.ts --dts --format esm,cjs --out-dir dist",
+    "build": "tsup src/index.ts --dts --format esm,cjs --legacy-output --out-dir dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
