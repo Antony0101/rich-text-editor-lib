@@ -5,12 +5,21 @@ import {
   Italic as LucideItalic,
   Underline as LucideUnderline,
   Strikethrough as LucideStrikethrough,
-  List,
-  ListOrdered,
-  Link2,
+  List as LucideList,
+  ListOrdered as LucideListOrdered,
+  Link2 as LucideLink2,
 } from "lucide-react";
 import "./rich-text-editor.css";
 
+interface IconProps {
+  bold?: React.ReactNode;
+  italic?: React.ReactNode;
+  underline?: React.ReactNode;
+  strikethrough?: React.ReactNode;
+  unorderedList?: React.ReactNode;
+  orderedList?: React.ReactNode;
+  link?: React.ReactNode;
+}
 interface RichTextEditorProps {
   name: string;
   value: string;
@@ -20,30 +29,8 @@ interface RichTextEditorProps {
   error?: string;
   className?: string;
   style?: React.CSSProperties;
+  icons?: IconProps;
 }
-
-const toolbarButtons = [
-  { cmd: "bold", icon: <LucideBold size={18} />, label: "Bold" },
-  { cmd: "italic", icon: <LucideItalic size={18} />, label: "Italic" },
-  { cmd: "underline", icon: <LucideUnderline size={18} />, label: "Underline" },
-  {
-    cmd: "strikeThrough",
-    icon: <LucideStrikethrough size={18} />,
-    label: "Strikethrough",
-  },
-  {
-    cmd: "insertUnorderedList",
-    icon: <List size={18} />, // Bullet List
-    label: "Bullet List",
-  },
-  {
-    cmd: "insertOrderedList",
-    icon: <ListOrdered size={18} />, // Numbered List
-    label: "Numbered List",
-  },
-  { cmd: "createLink", icon: <Link2 size={18} />, label: "Link" },
-  // Image upload intentionally omitted
-];
 
 const RichTextEditor: React.FC<RichTextEditorProps> = ({
   name,
@@ -54,7 +41,58 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({
   error,
   className,
   style,
+  icons,
 }) => {
+  const toolbarButtons = [
+    {
+      cmd: "bold",
+      icon: icons?.bold ? icons.bold : <LucideBold size={18} />,
+      label: "Bold",
+    },
+    {
+      cmd: "italic",
+      icon: icons?.italic ? icons.italic : <LucideItalic size={18} />,
+      label: "Italic",
+    },
+    {
+      cmd: "underline",
+      icon: icons?.underline ? icons?.underline : <LucideUnderline size={18} />,
+      label: "Underline",
+    },
+    {
+      cmd: "strikeThrough",
+      icon: icons?.strikethrough ? (
+        icons.strikethrough
+      ) : (
+        <LucideStrikethrough size={18} />
+      ),
+      label: "Strikethrough",
+    },
+    {
+      cmd: "insertUnorderedList",
+      icon: icons?.unorderedList ? (
+        icons.unorderedList
+      ) : (
+        <LucideList size={18} />
+      ), // Bullet List
+      label: "Bullet List",
+    },
+    {
+      cmd: "insertOrderedList",
+      icon: icons?.orderedList ? (
+        icons.orderedList
+      ) : (
+        <LucideListOrdered size={18} />
+      ), // Numbered List
+      label: "Numbered List",
+    },
+    {
+      cmd: "createLink",
+      icon: icons?.link ? icons.link : <LucideLink2 size={18} />,
+      label: "Link",
+    },
+    // Image upload intentionally omitted
+  ];
   const editorRef = useRef<HTMLDivElement>(null);
   const [activeStates, setActiveStates] = useState<{ [cmd: string]: boolean }>(
     {}
